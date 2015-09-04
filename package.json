@@ -1,0 +1,21 @@
+{
+  "name": "backbone-todos",
+  "version": "0.0.1",
+  "description": "A sample of todo lists using Backbone with different patterns",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backbone",
+    "todo"
+  ],
+  "author": "Cristiano Amici <cristiano.amici@admios-sa.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "amd-optimize": "^0.6.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-uglify": "^1.4.0"
+  }
+}

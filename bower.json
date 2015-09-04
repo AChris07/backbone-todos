@@ -1,0 +1,29 @@
+{
+  "name": "backbone-todos",
+  "version": "0.0.1",
+  "description": "A sample of todo lists using Backbone with different patterns",
+  "main": "index.html",
+  "keywords": [
+    "backbone",
+    "todos"
+  ],
+  "authors": [
+    "Cristiano Amici <cristiano.amici@admios-sa.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.2.3",
+    "jquery": "~2.1.4",
+    "requirejs": "~2.1.20"
+  },
+  "devDependencies": {
+    "requirejs-text": "~2.0.14"
+  }
+}
