@@ -11,7 +11,11 @@ define([
     template: _.template(listTemplate),
     taskTemplate: _.template(taskTemplate),
     initialize: function() {
-      this.collection.on('add', this.render(), this);
+      this.collection.on('add', this.render, this);
+      this.newTask = new NewTodoTask({
+        el: this.el,
+        collection: this.collection
+      });
     },
     render: function() {
       var html = this.template({
@@ -19,13 +23,7 @@ define([
         taskTemplate: this.taskTemplate
       });
       this.$el.html(html);
-
-      this.newTask = new NewTodoTask({
-        el: this.el,
-        collection: this.collection
-      });
       this.newTask.render();
-
       return this;
     }
   });
