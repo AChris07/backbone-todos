@@ -11,6 +11,9 @@ gulp.task('compress', function() {
     .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('default', function() {
+gulp.task('watch', function() {
   gulp.watch('js/**/*.js', ['compress']);
+});
+
+gulp.task('default', ['compress', 'watch'], function() {
 });
