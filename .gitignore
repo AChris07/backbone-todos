@@ -1,5 +1,9 @@
 # NPM modules
 node_modules
 
+# Bower components
+bower_components
+js/lib
+
 # Compiled (production) code
 dist

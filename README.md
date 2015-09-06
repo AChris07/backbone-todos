@@ -10,4 +10,7 @@ Requirements
 Installation
 ============
 As a single-page web app, it doesn't need much configuration.
-Just make sure to run ``gulp`` before you open it.
+Just make sure to run the following:
+
+    bower install
+    gulp
