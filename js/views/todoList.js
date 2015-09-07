@@ -2,11 +2,13 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'rivets',
+  'views/baseView',
   'views/NewTodoTask',
   'text!templates/list.html',
   'text!templates/task.html'
-], function($, _, Backbone, NewTodoTask, listTemplate, taskTemplate) {
-  var TodoList = Backbone.View.extend({
+], function($, _, Backbone, rivets, BaseView, NewTodoTask, listTemplate, taskTemplate) {
+  var TodoList = BaseView.extend({
     el: $('#todo-list'),
     template: _.template(listTemplate),
     taskTemplate: _.template(taskTemplate),
@@ -24,7 +26,11 @@ define([
       });
       this.$el.html(html);
       this.newTask.render();
+      BaseView.prototype.render.call(this);
       return this;
+    },
+    remove: function() {
+      BaseView.prototype.remove.call(this);
     }
   });
 
