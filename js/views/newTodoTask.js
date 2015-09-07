@@ -12,11 +12,6 @@ define([
     render: function() {
       var html = this.template();
       this.$el.append(html);
-      BaseView.prototype.render.call(this);
-      return this;
-    },
-    remove: function() {
-      BaseView.prototype.remove.call(this);
       return this;
     },
     events: {

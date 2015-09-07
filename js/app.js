@@ -12,13 +12,25 @@ define([
   var setAdapters = function() {
     rivets.adapters[':'] = {
       observe: function(obj, keypath, callback) {
-        obj.on('change:' + keypath, callback);
+        if(obj instanceof Backbone.Collection && keypath === 'models') {
+          obj.on("add remove", function() { callback(obj.models); });
+        } else {
+          obj.on("change:" + keypath, callback);
+        }
       },
       unobserve: function(obj, keypath, callback) {
-        obj.off('change:' + keypath, callback);
+        if(obj instanceof Backbone.Collection && keypath === 'models') {
+          obj.off("add remove", function() { callback(obj.models); });
+        } else {
+          obj.off("change:" + keypath, callback);
+        }
       },
       get: function(obj, keypath) {
-        return obj.get(keypath);
+        if (obj instanceof Backbone.Collection) {
+          return obj.models;
+        } else {
+          return obj.get(keypath);
+        }
       },
       set: function(obj, keypath, value) {
         obj.set(keypath, value);
