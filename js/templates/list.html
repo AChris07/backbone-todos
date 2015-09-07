@@ -1,5 +1,7 @@
-<ul class="task-list">
-  <% todoList.each(function(todoTask) { %>
-    <%= taskTemplate({todoTask: todoTask}) %>
-  <% }); %>
-</ul>
+<section class="todo">
+  <ul class="todo-list">
+    <% todoList.each(function(todoTask) { %>
+      <%= taskTemplate({todoTask: todoTask}) %>
+    <% }); %>
+  </ul>  
+</section>
