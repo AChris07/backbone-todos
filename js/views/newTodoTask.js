@@ -14,12 +14,13 @@ define([
       addTaskText: 'Add task'
     },
     eventList: {
-      addTodo: function(event, model) {
-        var newTask = new TodoTask();
-        var newTaskTitle = $('#new-todo-task').val();
-        newTask.set('title', newTaskTitle);
-        model.collection.add(newTask);
+      addTodo: function(event, view) {
+        view.collection.add(view.model);
+        view.model = new TodoTask();
       }
+    },
+    initialize: function() {
+      this.model = new TodoTask();
     },
     render: function() {
       var html = this.template();
