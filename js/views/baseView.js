@@ -7,6 +7,8 @@ define([
   var BaseView = Backbone.View.extend({
     render: function() {
       this.binding = rivets.bind(this.$el, {
+        values: this.values,
+        eventList: this.eventList,
         model: this.model,
         collection: this.collection
       });

@@ -1,4 +1,4 @@
 <div class="new-todo-task">
-  <input type="text" placeholder="Your new task" id="new-todo-task">
-  <input type="button" class="new-todo-task__button" value="Add task">
+  <input type="text" rv-placeholder="values.taskPlaceholder" id="new-todo-task">
+  <button type="button" class="new-todo-task__button" rv-on-click="eventList.addTodo">{ values.addTaskText }</button>
 </div>

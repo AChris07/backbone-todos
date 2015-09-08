@@ -11,7 +11,6 @@ define([
     el: $('#todo-list'),
     template: _.template(listTemplate),
     initialize: function() {
-      this.collection.on('add', this.render, this);
       this.newTask = new NewTodoTask({
         el: this.el,
         collection: this.collection
@@ -20,8 +19,9 @@ define([
     render: function() {
       var html = this.template();
       this.$el.html(html);
-      this.newTask.render();
+      // Make sure to first bind this view, then render (and bind) subsequent ones
       BaseView.prototype.render.call(this);
+      this.newTask.render();
       return this;
     },
     remove: function() {

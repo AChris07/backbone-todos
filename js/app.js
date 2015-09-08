@@ -33,7 +33,9 @@ define([
         }
       },
       set: function(obj, keypath, value) {
-        obj.set(keypath, value);
+        if (!(obj instanceof Backbone.Collection)) {
+          obj.set(keypath, value);
+        }
       }
     };
   };
