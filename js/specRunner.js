@@ -29,7 +29,8 @@
 
   // Define all of your specs here. These are RequireJS modules.
   var specs = [
-    'tests/taskSpec'
+    'tests/taskSpec',
+    'tests/routerSpec'
   ];
 
   // Load Jasmine and library configurations

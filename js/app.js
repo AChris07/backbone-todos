@@ -1,13 +1,14 @@
 define([
+  'backbone',
   'rivets',
   'setup',
   'router'
-], function(rivets, Setup, Router) {
+], function(Backbone, rivets, Setup, Router) {
   var initialize = function() {
     Setup.initialize();
-    Router.initialize();
+    var router = new Router();
 
-    Backbone.history.start();
+    Backbone.history.start({pushState: true});
   };
 
   return {

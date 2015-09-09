@@ -7,20 +7,14 @@ define([
 ], function($, _, Backbone, TodoTaskCollection, TodoList) {
   var AppRouter = Backbone.Router.extend({
     routes: {
-      '': 'index'
+      '': 'home'
     },
-    index: function() {
+    home: function() {
       var todoTaskCollection = new TodoTaskCollection();
       var todoList = new TodoList({collection: todoTaskCollection});
       todoList.render();
     }
   });
 
-  var initialize = function() {
-    var appRouter = new AppRouter();
-  };
-
-  return {
-    initialize: initialize
-  };
+  return AppRouter;
 });
