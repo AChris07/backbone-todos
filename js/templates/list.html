@@ -1,7 +1,7 @@
 <section class="todo">
   <ul class="todo-list" rv-each-todo="collection:models">
-    <li class="todo-task" rv-class-done="todo:completed">
-      <input type="checkbox" class="toggle" rv-checked="todo:completed">
+    <li class="todo-task" rv-class-done="todo:isDone">
+      <input type="checkbox" class="toggle" rv-checked="todo:isDone">
       <span>{ todo:title }</span>
     </li>
   </ul>

@@ -5,10 +5,10 @@ define([
   var TodoTask = Backbone.Model = Backbone.Model.extend({
     defaults: {
       title: '',
-      completed: false
+      isDone: false
     },
     toggleStatus: function() {
-      this.completed = !this.completed;
+      this.isDone = !this.isDone;
     }
   });
 
