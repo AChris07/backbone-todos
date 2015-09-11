@@ -1,9 +1,10 @@
 define([
+  'rivets',
   'models/todoTask',
   'collections/todoTaskCollection',
   'views/todoList'
-], function(TodoTask, TodoTaskCollection, TodoList) {
-  describe('A todo list view', function() {
+], function(rivets, TodoTask, TodoTaskCollection, TodoList) {
+  describe('The todo-list view', function() {
     var todoTask,
         todoTaskCollection,
         todoList;
@@ -20,7 +21,11 @@ define([
       expect(TodoList).toBeDefined();
     });
     it('is initialized and rendered', function() {
-      expect(el.find('li span').text()).toBe('Test task');
+      expect(el.find('.todo-task span').first().text()).toBe('Test task');
+    });
+    it('crosses out a task as "done" when it is selected', function() {
+      el.find('.todo-task input').first().trigger('click');
+      expect(el.find('.todo-task').first().hasClass('done')).toBe(true);
     });
   });
 });

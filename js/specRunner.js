@@ -36,7 +36,9 @@
   ];
 
   // Load Jasmine and library configurations
-  require(['boot', 'config'], function () {
+  require(['boot', 'config', 'setup'], function (boot, config, Setup) {
+    // Initialize Rivets setup
+    Setup.initialize();
     // Load the specs
     require(specs, function () {
       // Initialize the HTML Reporter and execute the environment (setup by `boot.js`)
