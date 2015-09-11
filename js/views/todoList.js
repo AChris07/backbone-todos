@@ -8,7 +8,6 @@ define([
   'text!templates/list.html'
 ], function($, _, Backbone, rivets, BaseView, NewTodoTask, listTemplate, taskTemplate) {
   var TodoList = Backbone.View.extend({
-    el: $('#todo-list'),
     template: _.template(listTemplate),
     initialize: function() {
       this.newTask = new NewTodoTask({
