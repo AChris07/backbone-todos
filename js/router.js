@@ -11,7 +11,7 @@ define([
     },
     home: function() {
       var todoTaskCollection = new TodoTaskCollection();
-      var todoList = new TodoList({el: $('#todo-list'), collection: todoTaskCollection});
+      var todoList = new TodoList({collection: todoTaskCollection});
       todoList.render();
     }
   });

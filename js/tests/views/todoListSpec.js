@@ -1,9 +1,10 @@
 define([
+  'jquery',
   'rivets',
   'models/todoTask',
   'collections/todoTaskCollection',
   'views/todoList'
-], function(rivets, TodoTask, TodoTaskCollection, TodoList) {
+], function($, rivets, TodoTask, TodoTaskCollection, TodoList) {
   describe('The todo-list view', function() {
     var todoTask,
         todoTaskCollection,
@@ -13,8 +14,12 @@ define([
     beforeAll(function() {
       todoTask = new TodoTask({title: 'Test task'});
       todoTaskCollection = new TodoTaskCollection([todoTask]);
-      todoList = new TodoList({collection: todoTaskCollection});
+      todoList = new TodoList({el: $('#test-container'), collection: todoTaskCollection});
       el = todoList.render().$el;
+    });
+
+    afterAll(function() {
+      todoList.remove();
     });
 
     it('is defined', function() {

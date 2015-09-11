@@ -13,11 +13,8 @@ define([
       taskPlaceholder: 'Your new task',
       addTaskText: 'Add task'
     },
-    eventList: {
-      addTodo: function(event, view) {
-        view.collection.add(view.model);
-        view.model = new TodoTask();
-      }
+    events: {
+      'click .new-todo-task__button': 'addTodo'
     },
     initialize: function() {
       this.model = new TodoTask();
@@ -31,6 +28,11 @@ define([
     remove: function() {
       BaseView.prototype.remove.call(this);
     },
+    addTodo: function(event) {
+      var newTask = this.model.clone();
+      this.collection.add(newTask);
+      this.model.unset('title');
+    }
   });
 
   return NewTodoTask;

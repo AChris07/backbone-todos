@@ -8,7 +8,6 @@ define([
     render: function() {
       this.binding = rivets.bind(this.$el, {
         values: this.values,
-        eventList: this.eventList,
         model: this.model,
         collection: this.collection
       });
@@ -16,6 +15,7 @@ define([
     },
     remove: function() {
       this.binding.unbind();
+      Backbone.View.prototype.remove.call(this);
     }
   });
 
