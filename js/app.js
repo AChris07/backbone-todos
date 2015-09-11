@@ -8,7 +8,7 @@ define([
     Setup.initialize();
     var router = new Router();
 
-    Backbone.history.start({pushState: true});
+    Backbone.history.start();
   };
 
   return {
